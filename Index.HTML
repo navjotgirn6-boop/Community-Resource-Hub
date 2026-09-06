@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Resource Hub for local emergency resources, shelters, food, water, charging stations, and medical assistance.">
+  <meta name="theme-color" content="#0b172a">
+  <title>Community Resource Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div>
+          <p class="eyebrow">LOCAL EMERGENCY SUPPORT</p>
+          <h1>Community Resource Hub</h1>
+          <p class="header-description">
+            Find nearby shelters, food, water, charging stations, and medical resources during local emergencies.
+          </p>
+        </div>
+
+        <div class="emergency-banner" role="region" aria-label="Emergency contact numbers">
+          <div class="emergency-title">
+            <span class="emergency-icon" aria-hidden="true">!</span>
+            Emergency Contact Numbers
+          </div>
+
+          <div class="emergency-numbers">
+            <a href="tel:911">
+              <span>Emergency</span>
+              <strong>911</strong>
+            </a>
+
+            <a href="tel:211">
+              <span>Community Help</span>
+              <strong>211</strong>
+            </a>
+
+            <a href="tel:311">
+              <span>City Services</span>
+              <strong>311</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-section" aria-labelledby="search-heading">
+      <div class="container">
+        <div class="search-wrapper">
+          <label id="search-heading" for="searchInput" class="search-label">
+            Find a resource
+          </label>
+
+          <div class="search-box">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/>
+            </svg>
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search by city, neighborhood, or resource..."
+              autocomplete="off"
+              aria-label="Search emergency resources"
+            >
+
+            <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search">
+              ×
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Filter resources">
+          <button class="filter-btn active" type="button" data-filter="All" aria-pressed="true">
+            All
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="Shelters" aria-pressed="false">
+            Shelters
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="Water/Food" aria-pressed="false">
+            Water / Food
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="Charging Stations" aria-pressed="false">
+            Charging Stations
+          </button>
+
+          <button class="filter-btn" type="button" data-filter="Medical" aria-pressed="false">
+            Medical
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-section" aria-labelledby="resources-heading">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AVAILABLE RESOURCES</p>
+            <h2 id="resources-heading">Local Support</h2>
+          </div>
+
+          <p id="resultCount" class="result-count" aria-live="polite"></p>
+        </div>
+
+        <div id="resourceGrid" class="resource-grid"></div>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">⌕</div>
+          <h3>No resources found</h3>
+          <p>
+            Try another city, neighborhood, or resource category.
+          </p>
+          <button id="resetFilters" type="button" class="reset-btn">
+            Reset filters
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>
+        Community Resource Hub
+      </p>
+      <p>
+        Information shown is for demonstration purposes. In an actual emergency, call 911.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
